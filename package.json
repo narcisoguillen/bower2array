@@ -1,0 +1,36 @@
+{
+  "name"        : "bower2array",
+  "version"     : "1.0.0",
+  "description" : "Bower components to an array",
+  "main"        : "index.js",
+  "author"      : "Narciso Guillen <guillen.narciso@gmail.com>",
+  "license"     : "ISC",
+
+  "scripts": {
+    "test" : ""
+  },
+
+  "repository": {
+    "type" : "git",
+    "url"  : "git+ssh://git@github.com/narcisoguillen/bower2array.git"
+  },
+
+  "keywords": [
+    "bower",
+    "components",
+    "array",
+    "list",
+    "installed"
+  ],
+
+  "bugs": {
+    "url": "https://github.com/narcisoguillen/bower2array/issues"
+  },
+
+  "homepage" : "https://github.com/narcisoguillen/bower2array#readme",
+
+  "dependencies" : {
+    "underscore" : "1.8.x"
+  }
+
+}
