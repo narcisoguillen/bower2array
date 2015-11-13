@@ -64,5 +64,38 @@ If bower components are installed in a different directory by default `app/bower
 
      bower2array.setPath('bower/bower_components');
 
+## Karma
 
+### Configuration file example
 
+var bower2array     = require('bower2array');
+var _               = require('lodash');
+var bowerComponents = [];
+
+```javascript
+
+var bower2array     = require('bower2array');
+var _               = require('underscore');
+var bowerComponents = [];
+
+bower2array.prioritize([
+  'angular',
+  'jquery',
+  'bootstrap'
+]);
+
+bower2array.ignore(['angular-scenario']);
+bower2array.extract(function(list){
+  bowerComponents = list;
+});
+
+module.exports = function(config){
+
+    // list of files / patterns to load in the browser
+    files: _.union(bowerComponents, [
+      'specs/mySpec.js'
+    ]),
+
+};
+
+```javascript
