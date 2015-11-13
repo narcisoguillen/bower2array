@@ -68,10 +68,6 @@ If bower components are installed in a different directory by default `app/bower
 
 ### Configuration file example
 
-var bower2array     = require('bower2array');
-var _               = require('lodash');
-var bowerComponents = [];
-
 ```javascript
 
 var bower2array     = require('bower2array');
