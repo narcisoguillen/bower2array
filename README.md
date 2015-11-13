@@ -29,15 +29,15 @@ List all installes Bower components in one single array
 
      var bower2array = require('bower2array');
 
-     bower2array.load(function(list){
+     bower2array.extract(function(list){
         // list of bower components
      });
 
-## Set list of dependencies
+## Prioritize bower components
 
 Some times components have dependencies. This will get listed as mention then the rest;
 
-     bower2array.setDeps(['angular', 'jquery', 'bootstrap']);
+     bower2array.prioritize(['angular', 'jquery', 'bootstrap']);
 
      [
        'app/bower_components/../angular.js',
@@ -46,8 +46,23 @@ Some times components have dependencies. This will get listed as mention then th
        ...
      ]
 
+## Ignore bower components
+
+Ignore bower components
+
+     bower2array.ignore([jquery']);
+
+     [
+       'app/bower_components/../angular.js',
+       'app/bower_components/../bootstrap.js',
+       ...
+     ]
+
 ## Change base path
 
-If bower components are installed in a different directory
+If bower components are installed in a different directory by default `app/bower_components/`
 
      bower2array.setPath('bower/bower_components');
+
+
+

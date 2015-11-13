@@ -1,5 +1,21 @@
 {
+
   "basePath" : "app/bower_components/",
-  "folders"  : ["src", "build", "dist", "javascripts", "release"],
-  "ignore"   : ["index.js", "Gruntfile.js", "package.js", "karma.conf.js", "gulpfile.js"]
+
+  "folders" : [
+    "src"         ,
+    "build"       ,
+    "dist"        ,
+    "javascripts" ,
+    "release"
+  ],
+
+  "ignore" : [
+  "index.js"      ,
+  "Gruntfile.js"  ,
+  "package.js"    ,
+  "karma.conf.js" ,
+  "gulpfile.js"
+  ]
+
 }
