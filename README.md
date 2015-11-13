@@ -32,3 +32,9 @@ List all installes Bower components in one single array
      bower2array.load(function(list){
         // list of bower components
      });
+
+## Change base path
+
+If bower components are installed in a different directory
+
+     bower2array.setPath('bower/bower_components');
