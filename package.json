@@ -1,6 +1,6 @@
 {
   "name"        : "bower2array",
-  "version"     : "1.0.4",
+  "version"     : "1.0.5",
   "description" : "Bower components to an array",
   "main"        : "index.js",
   "author"      : "Narciso Guillen <guillen.narciso@gmail.com>",
