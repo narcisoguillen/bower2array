@@ -86,12 +86,12 @@ bower2array.dependencies({
 Ignore bower components
 
 ```javascript
-bower2array.ignore([jquery']);
+bower2array.ignore(['jquery']);
 
 [
  'app/bower_components/../angular.js',
  'app/bower_components/../bootstrap.js',
- ...
+ 'app/bower_components/../moment.js'
 ]
 ```
 
