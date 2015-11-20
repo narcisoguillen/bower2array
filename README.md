@@ -27,42 +27,81 @@ List all installes Bower components in one single array
 
 ## How
 
-     var bower2array = require('bower2array');
+```javascript
+var bower2array = require('bower2array');
 
-     bower2array.extract(function(list){
-        // list of bower components
-     });
+bower2array.extract(function(list){
+  // list of bower components
+});
+```
+
+## Configure bower2array at once
+
+```javascript
+bower2array.config({
+
+  ignore     : ['angular-scenario'],
+  prioritize : [ 'angular', 'jquery', 'bootstrap', 'moment' ],
+
+  dependencies : {
+    'angular-stripe' : ['app/scripts/libs/stripe.js']
+  }
+
+});
+```
+
 
 ## Prioritize bower components
 
 Some times components have dependencies. This will get listed as mention then the rest;
 
-     bower2array.prioritize(['angular', 'jquery', 'bootstrap']);
+```javascript
+bower2array.prioritize(['angular', 'jquery', 'bootstrap']);
 
-     [
-       'app/bower_components/../angular.js',
-       'app/bower_components/../jquery.js',
-       'app/bower_components/../bootstrap.js',
-       ...
-     ]
+[
+ 'app/bower_components/../angular.js',
+ 'app/bower_components/../jquery.js',
+ 'app/bower_components/../bootstrap.js',
+ ...
+]
+```
+
+## External dependencies
+
+Some times components have external dependencies
+
+```javascript
+bower2array.dependencies({
+ 'angular-stripe' : ['public/javascripts/vendor/stripe.js']
+});
+
+[
+ 'public/javascripts/vendor/stripe.js',
+ '/bower_components/angular-stripe/release/angular-stripe.js'
+]
+```
 
 ## Ignore bower components
 
 Ignore bower components
 
-     bower2array.ignore([jquery']);
+```javascript
+bower2array.ignore([jquery']);
 
-     [
-       'app/bower_components/../angular.js',
-       'app/bower_components/../bootstrap.js',
-       ...
-     ]
+[
+ 'app/bower_components/../angular.js',
+ 'app/bower_components/../bootstrap.js',
+ ...
+]
+```
 
 ## Change base path
 
 If bower components are installed in a different directory by default `app/bower_components/`
 
-     bower2array.setPath('bower/bower_components');
+```javascript
+bower2array.setPath('bower/bower_components');
+```
 
 ## Karma
 
@@ -70,17 +109,17 @@ If bower components are installed in a different directory by default `app/bower
 
 ```javascript
 
-var bower2array     = require('bower2array');
-var _               = require('underscore');
-var bowerComponents = [];
+bower2array.config({
 
-bower2array.prioritize([
-  'angular',
-  'jquery',
-  'bootstrap'
-]);
+  ignore     : ['angular-scenario'],
+  prioritize : [ 'angular', 'jquery', 'bootstrap', 'moment' ],
 
-bower2array.ignore(['angular-scenario']);
+  dependencies : {
+    'angular-stripe' : ['app/scripts/libs/stripe.js']
+  }
+
+});
+
 bower2array.extract(function(list){
   bowerComponents = list;
 });
